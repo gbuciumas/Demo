@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ItinDomainModel/ItinDomainModel.iml" filepath="$PROJECT_DIR$/ItinDomainModel/ItinDomainModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ItinManager/ItinManager.iml" filepath="$PROJECT_DIR$/ItinManager/ItinManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ItinManagerApi/ItinManagerApi.iml" filepath="$PROJECT_DIR$/ItinManagerApi/ItinManagerApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ItinManagerData/ItinManagerData.iml" filepath="$PROJECT_DIR$/ItinManagerData/ItinManagerData.iml" />
+    </modules>
+  </component>
+</project>
