@@ -1,12 +1,19 @@
-package main.java.com.itin.entity;
+package com.itin.entity;
 
+import com.itin.entity.BaseEntity;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
-public class OrderEntity {
+@Table(name="ORDERS")
+public class OrderEntity extends BaseEntity{
 
-
+    @Column(name="ORDER_NUMBER")
     private String orderNumber;
+
+    @Column(name="ORDER_STATUS")
     private String orderStatus;
 
     public String getOrderNumber() {
