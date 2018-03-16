@@ -1,15 +1,28 @@
 package com.itin.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.itin.actions.ISearchItinNumber;
+import com.itin.model.SearchItinNumberRequest;
+import com.itin.model.SearchItinNumberResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 public class ItinManagerController {
-	
-	@RequestMapping("/search")
-    public String searchItin(@RequestParam(value="itin", defaultValue="1234") String itin) {
-        return "Hello world" + itin;
+	@Autowired
+    private ISearchItinNumber searchItinNumberAction;
+
+	@RequestMapping(value = "/search", method = RequestMethod.POST)
+    public ResponseEntity<SearchItinNumberResponse> searchItin(@RequestBody @Valid SearchItinNumberRequest itin) {
+	    SearchItinNumberResponse response = searchItinNumberAction.searchItinNumber(itin);
+	    if (response == null)
+        {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<SearchItinNumberResponse>(response, HttpStatus.OK);
     }
 
 }
